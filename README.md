@@ -1,8 +1,6 @@
-# code-with-quarkus Project
+# quarkus-mailer-reproducer Project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+This is a reproduction of [this Quarkus Mailer SMTP TLS issue](https://github.com/quarkusio/quarkus/issues/18329).
 
 ## Testing the Mailer
 
