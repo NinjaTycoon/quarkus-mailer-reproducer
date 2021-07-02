@@ -1,2 +1,9 @@
 greeting:
   message: "hello"
+quarkus:
+  http:
+    port: 9090
+    test-port: 9091
+    test-ssl-port: 9446
+    auth:
+      proactive: false
