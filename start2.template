@@ -1,0 +1,3 @@
+./mvnw compile quarkus:dev \
+  -Djavax.net.ssl.trustStore=/PATH_TO_TRUSTSTORE/cacerts \
+  -Djavax.net.ssl.trustStorePassword=changeit

@@ -1,0 +1,1 @@
+./mvnw clean package -e -Pnative -DskipTests -Dquarkus.container-image.build=true

@@ -22,7 +22,31 @@ You'll then need to test your SMTP server with dev by adding configuration to ap
 
 This also has "changeit" for your truststore password.  Change it if necessary.  
 
+Your truststore should include the TLS cert of the SMTP server you'll be talking to.  
 
+Also copy start2.template to start2 and update it with the path to your truststore.  Run that to launch dev using the truststore.  
+
+Once this is configured, you should get an OK when you hit the REST service.  
+
+If you also change the ```receiver``` String in EmailerTestREST.java to your email address, you should receive the test email in your inbox.  
+
+### Testing in container
+
+So far so good hopefully.  Now that you have it working in dev, just have to build and run the container since you already configured it in application.yml.  This presumes you are already setup for and comfortable with docker.
+
+Run the build-docker script.  
+
+./build-docker
+
+Copy run-docker.template to run-docker and chmod 775 on it.  edit it and change USER.  You can verify the image name with 
+
+```
+docker images|grep quarkus-mailer-reproducer
+```
+
+Now when you ```./run-docker``` and hit the REST TEST URL, you should see "Internal Server Error" in your browser, and in the logs
+
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 
 ## Running the application in dev mode
 
