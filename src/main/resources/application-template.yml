@@ -1,0 +1,19 @@
+greeting:
+  message: "hello"
+quarkus:
+  http:
+    port: 9090
+    test-port: 9091
+    test-ssl-port: 9446
+    auth:
+      proactive: false
+  log:
+    console:
+      color: false
+  native:
+    additional-build-args: -J-Djavax.net.ssl.trustStore=/PATH_TO_TRUSTSTORE/cacerts,-J-Djavax.net.ssl.trustStorePassword=changeit
+  mailer:
+    from: noreply@YOURDOMAIN
+    host: smtp.YOURDOMAIN
+    port: 25
+    mock: false

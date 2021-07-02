@@ -4,6 +4,26 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+## Testing the Mailer
+
+You can launch this in dev.  If you want to use the scripts provided, then
+
+chmod 775 start*
+chmod 775 build*
+chmod 775 run*
+
+When you hit this REST URL with your browser or any client, you should get back an OK:
+
+http://localhost:9090/test/emailer/simple
+
+Initially, it runs in dev with the mock mailer and outputs to the log.
+
+You'll then need to test your SMTP server with dev by adding configuration to application.yml in src/main/resources.  You can use the application-template.yml to copy the settings you need and change PATH_TO_TRUSTSTORE, YOURDOMAIN and YOURDOMAIN_SMTP_HOST.
+
+This also has "changeit" for your truststore password.  Change it if necessary.  
+
+
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:

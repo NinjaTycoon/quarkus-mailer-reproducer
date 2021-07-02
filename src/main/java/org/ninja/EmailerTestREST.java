@@ -10,13 +10,14 @@ import io.quarkus.mailer.Mailer;
 
 @Path("test/emailer")
 public class EmailerTestREST {
+	String receiver = "you@whereever.com";
 	@Inject
 	Mailer mailer;
 
 	@GET
 	@Path("simple")
 	public Response sendASimpleEmail() {
-	    mailer.send(Mail.withText("you@whereever.com", "A simple email from quarkus", "This is my body"));
+	    mailer.send(Mail.withText(receiver, "A simple email from quarkus", "This is my body"));
 	    return Response.accepted("OK").build();
 	}	
 }
